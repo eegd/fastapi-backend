@@ -1,9 +1,11 @@
+import logging
+
 from fastapi import Request, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
-from ..model.response_model import InfoRes
-import logging
+
+from app.model.response_model import InfoRes
 
 
 class ExceptionHandlerMiddleware(BaseHTTPMiddleware):

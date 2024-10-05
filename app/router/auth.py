@@ -1,15 +1,17 @@
 from datetime import datetime, timedelta
+from typing import Annotated
+
 from fastapi import APIRouter, status, Depends
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from typing import Annotated
-from ..auth.auth import AuthService
-from ..db.service import UserService
-from ..model.response_model import InfoRes, Token
-from ..utility.config import GlobalConfig as cfg
-from ..utility.utils import get_db
+
+from app.auth.auth import AuthService
+from app.db.service import UserService
+from app.model.response_model import InfoRes, Token
+from app.utility.config import GlobalConfig as cfg
+from app.utility.utils import get_db
 
 
 auth = AuthService()

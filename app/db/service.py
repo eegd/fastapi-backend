@@ -1,13 +1,15 @@
+import logging
+
 from fastapi import status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from sqlalchemy import Column
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
-from . import model
-from .schema import IUser
-from ..model.response_model import InfoRes
-import logging
+
+from app import model
+from app.db.schema import IUser
+from app.model.response_model import InfoRes
 
 
 class UserService:

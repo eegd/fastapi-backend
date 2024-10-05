@@ -1,13 +1,17 @@
+import logging
+import jwt
+
 from datetime import datetime, timedelta, timezone
+from typing import Annotated
+
 from fastapi import status, Depends
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
-from typing import Annotated
-from ..model.response_model import InfoRes
-from ..utility.config import GlobalConfig as cfg
-import jwt, logging
+
+from app.model.response_model import InfoRes
+from app.utility.config import GlobalConfig as cfg
 
 
 class AuthService:

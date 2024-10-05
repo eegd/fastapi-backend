@@ -1,5 +1,6 @@
-from pydantic import BaseModel, Field, field_validator
 import re
+
+from pydantic import BaseModel, Field, field_validator
 
 
 class UserCreate(BaseModel):
@@ -14,3 +15,8 @@ class UserCreate(BaseModel):
                 "Password must contain at least one uppercase letter, one lowercase letter, and one number"
             )
         return value
+
+
+class TaskCreate(BaseModel):
+    key: str
+    msg: str

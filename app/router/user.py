@@ -1,12 +1,14 @@
+from typing import Annotated
+
 from fastapi import APIRouter, status, Depends
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
-from typing import Annotated
-from ..auth.auth import AuthService
-from ..db.service import UserService
-from ..model.request_model import UserCreate
-from ..model.response_model import InfoRes, InfoUser
-from ..utility.utils import get_db
+
+from app.auth.auth import AuthService
+from app.db.service import UserService
+from app.model.request_model import UserCreate
+from app.model.response_model import InfoRes, InfoUser
+from app.utility.utils import get_db
 
 
 auth = AuthService()

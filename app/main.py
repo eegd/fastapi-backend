@@ -1,13 +1,16 @@
+import logging
+import sys
+
 from fastapi import FastAPI, Request, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
-from .db import model
-from .db.database import engine
-from .model.response_model import InfoRes
-from .router import auth, user
-from .utility.exception import ExceptionHandlerMiddleware
-import logging, sys
+
+from app.db import model
+from app.db.database import engine
+from app.model.response_model import InfoRes
+from app.router import auth, user
+from app.utility.exception import ExceptionHandlerMiddleware
 
 app = FastAPI(title="Login Authentication")
 
